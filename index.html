@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BellaBalance</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">BB</div>
+    <div class="nav-links">
+      <a href="#story">Story</a>
+      <a href="#collection">Collection</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="photos/20260310_2108_New Video_simple_compose_01kkcjcwtrexatnp4m07c4ezyb.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tagline">Balance Today. Breathe Tomorrow.</p>
+    </div>
+    <div class="scroll-hint" id="scrollHint">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Gradient Transition -->
+  <div class="gradient-transition"></div>
+
+  <!-- Story Section -->
+  <section class="section story-section" id="story">
+    <div class="section-inner">
+      <div class="story-grid">
+        <div class="story-text">
+          <span class="section-label reveal">Our Story</span>
+          <h2 class="reveal reveal-delay-1">Crafted with intention,<br>designed for stillness.</h2>
+          <p class="reveal reveal-delay-2">BellaBalance was born from a simple observation — in a world that moves too fast, the objects we surround ourselves with should invite us to slow down. Each piece is a quiet statement, shaped by the belief that beauty lives in restraint.</p>
+          <a href="story.html" class="btn-learn reveal reveal-delay-3">Learn more</a>
+        </div>
+        <div class="story-image">
+          <img src="photos/20260310_2130_Elegant Vase Display_remix_01kkckmx5pfqnr76mypseq4aa3.png" alt="Elegant vase display" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Section -->
+  <section class="section collection-section" id="collection">
+    <div class="section-inner">
+      <span class="section-label reveal">The Collection</span>
+      <h2 class="reveal reveal-delay-1">Where form meets calm.</h2>
+      <div class="carousel" id="carousel">
+        <div class="carousel-item pos-left" data-index="0" data-label="Stillness" data-desc="Embrace the quiet moments">
+          <div class="carousel-card">
+            <img src="photos/image1.png" alt="Stillness" >
+          </div>
+          <p class="carousel-label">Stillness</p>
+        </div>
+        <div class="carousel-item pos-center active" data-index="1" data-label="Form" data-desc="Where shape finds meaning">
+          <div class="carousel-card">
+            <img src="photos/image2.png" alt="Form">
+          </div>
+          <p class="carousel-label">Form</p>
+        </div>
+        <div class="carousel-item pos-right" data-index="2" data-label="Balance" data-desc="Harmony in every curve">
+          <div class="carousel-card">
+            <img src="photos/image3.png" alt="Balance">
+          </div>
+          <p class="carousel-label">Balance</p>
+        </div>
+      </div>
+      <p class="carousel-desc" id="carouselDesc">Where shape finds meaning</p>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="section philosophy-section" id="philosophy">
+    <div class="section-inner">
+      <div class="philosophy-grid">
+        <div class="creators-visual">
+          <div class="philosophy-image">
+            <img src="photos/20260310_2131_Image Generation_simple_compose_01kkckq28sek98zscj6ra469p7.png" alt="BellaBalance vases" loading="lazy">
+          </div>
+        </div>
+        <div class="creators-visual">
+          <div class="creator-accent">
+            <img src="photos/image6.png" alt="Abstract detail" loading="lazy">
+          </div>
+          <div class="philosophy-text">
+            <span class="section-label reveal">The Creators</span>
+            <h2 class="reveal reveal-delay-1">Less noise.<br>More presence.</h2>
+            <p class="reveal reveal-delay-2">We don’t chase trends. We pursue timelessness. Every curve, every surface, every shadow cast by a BellaBalance piece is considered — not decorated. Our design language speaks softly, because quiet confidence needs no amplification.</p>
+          <a href="creators.html" class="btn-learn reveal reveal-delay-3">Learn more</a>
+          </div>
+          <div class="creator-photo">
+            <img src="photos/image5.png" alt="The creator" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section class="section programs-section">
+    <div class="section-inner">
+      <span class="section-label reveal">Programs</span>
+      <h2 class="reveal reveal-delay-1">Four ways we shape objects<br>that shape your space.</h2>
+      <div class="programs-list">
+        <div class="program-row reveal">
+          <h3 class="program-title">Bespoke Design</h3>
+          <p class="program-desc">Made to Measure. Made to Matter.</p>
+        </div>
+        <div class="program-row reveal reveal-delay-1">
+          <h3 class="program-title">Seasonal Editions</h3>
+          <p class="program-desc">Limited Runs. Lasting Impressions.</p>
+        </div>
+        <div class="program-row reveal reveal-delay-2">
+          <h3 class="program-title">Interior Curation</h3>
+          <p class="program-desc">Compose Spaces with Quiet Confidence.</p>
+        </div>
+        <div class="program-row reveal reveal-delay-3">
+          <h3 class="program-title">Corporate Gifting</h3>
+          <p class="program-desc">Give Objects That Speak Without Words.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail Section -->
+  <section class="section detail-section" id="detail">
+    <div class="section-inner detail-inner">
+      <span class="section-label detail-label reveal">The Detail</span>
+      <div class="detail-image reveal reveal-delay-1">
+        <img src="photos/ChatGPT%20Image%2012.3.2026%20klo%2010.24.20.png" alt="BellaBalance vases" loading="lazy">
+      </div>
+      <p class="detail-caption reveal reveal-delay-2">BellaBalance, Handcrafted Vases</p>
+      <div class="detail-quote reveal reveal-delay-3">
+        <blockquote>"The details are not the details. They make the design."</blockquote>
+        <cite>— Charles Eames</cite>
+      </div>      <a href="detail.html" class="btn-learn reveal reveal-delay-3">Learn more</a>    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>BellaBalance</h4>
+          <p>Objects designed to quiet the noise. Born from restraint, shaped by intention, made to last beyond seasons and trends.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#philosophy">Philosophy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@bellabalance.com">hello@bellabalance.com</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Pinterest</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-brand">
+          <span class="footer-bottom-logo">BB</span>
+          <p class="footer-bottom-name">BellaBalance</p>
+        </div>
+        <div class="footer-copy">
+          <p>&copy; 2026 BellaBalance. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

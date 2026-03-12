@@ -1,0 +1,113 @@
+/* ========== SUBPAGE STYLES ========== */
+
+/* Hero */
+.page-hero {
+  padding: 12rem 3rem 6rem;
+  background: #ffffff;
+}
+
+.page-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.15;
+  color: #2a2a2a;
+  letter-spacing: -0.02em;
+  margin-top: 1rem;
+}
+
+/* Sections */
+.page-section {
+  padding: 6rem 3rem;
+}
+
+.page-section-alt {
+  background: #f6f6f6;
+}
+
+.page-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.page-grid-reverse {
+  direction: rtl;
+}
+
+.page-grid-reverse > * {
+  direction: ltr;
+}
+
+.page-text h2 {
+  margin-bottom: 1.5rem;
+}
+
+.page-text p {
+  margin-bottom: 1.2rem;
+  max-width: none;
+}
+
+.page-image {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.page-image img {
+  border-radius: 16px;
+  transition: transform 0.6s ease;
+}
+
+.page-image:hover img {
+  transform: scale(1.03);
+}
+
+/* Full-width image */
+.page-full-image {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.page-full-image img {
+  border-radius: 16px;
+}
+
+/* CTA */
+.page-cta {
+  text-align: center;
+  padding: 4rem 3rem 6rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page-hero {
+    padding: 10rem 1.5rem 4rem;
+  }
+
+  .page-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .page-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .page-grid-reverse {
+    direction: ltr;
+  }
+
+  .page-full-image {
+    max-width: 100%;
+  }
+}
