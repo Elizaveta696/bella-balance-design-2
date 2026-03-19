@@ -10,9 +10,14 @@ html {
   font-size: 16px;
 }
 
+:root {
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'DM Sans', sans-serif;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
+  font-family: var(--font-secondary);
+  font-weight: 400;
   color: #3a3a3a;
   background: #ffffff;
   overflow-x: hidden;
@@ -34,8 +39,8 @@ a {
 
 /* ========== TYPOGRAPHY ========== */
 h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: 500;
   font-size: clamp(2rem, 4.5vw, 3.4rem);
   line-height: 1.2;
   color: #2a2a2a;
@@ -43,7 +48,17 @@ h2 {
   letter-spacing: -0.02em;
 }
 
+h1,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  font-weight: 500;
+}
+
 p {
+  font-family: var(--font-secondary);
   font-size: clamp(1rem, 1.3vw, 1.12rem);
   line-height: 1.75;
   color: #4a4a4a;
@@ -52,6 +67,7 @@ p {
 
 .section-label {
   display: block;
+  font-family: var(--font-primary);
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -74,10 +90,8 @@ p {
   opacity: 0;
   transform: translateY(-20px);
   pointer-events: none;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(30px) saturate(180%);
-  -webkit-backdrop-filter: blur(30px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -88,8 +102,8 @@ p {
 }
 
 .nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: 500;
   font-size: 1.2rem;
   letter-spacing: 0.15em;
   color: #2a2a2a;
@@ -101,6 +115,7 @@ p {
 }
 
 .nav-links a {
+  font-family: var(--font-primary);
   font-size: 0.76rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -151,7 +166,7 @@ p {
 }
 
 .hero-tagline {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-primary);
   font-weight: 500;
   font-size: clamp(1.6rem, 3.8vw, 3rem);
   color: #ffffff;
@@ -289,6 +304,7 @@ p {
   background: #fafafa;
   text-align: center;
   overflow: hidden;
+  padding: 4.5rem 3rem;
   transition: background-color 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -297,7 +313,7 @@ p {
 }
 
 .collection-section h2 {
-  margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
   transition: color 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -313,106 +329,88 @@ p {
   color: #666;
 }
 
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 560px;
-  padding: 2rem 0 1rem;
+.collection-grid {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
-.carousel-item {
-  position: absolute;
+.collection-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  transition: left 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Slot positions */
-.carousel-item.pos-left {
-  left: 5%;
-  transform: scale(0.85);
-}
-
-.carousel-item.pos-center {
-  left: 50%;
-  transform: translateX(-50%) scale(1);
-}
-
-.carousel-item.pos-right {
-  left: 95%;
-  transform: translateX(-100%) scale(0.85);
-}
-
-.carousel-item:not(.active):hover {
-  transform: scale(0.78);
-}
-
-.carousel-item.pos-right:not(.active):hover {
-  transform: translateX(-100%) scale(0.78);
-}
-
-.carousel-item.active {
-  cursor: default;
-  z-index: 2;
-}
-
-.carousel-card {
-  width: 340px;
-  height: 460px;
+.collection-card {
+  position: relative;
+  width: 88%;
+  aspect-ratio: 4 / 5;
+  max-height: 235px;
   border-radius: 20px;
   overflow: hidden;
-  filter: blur(14px);
-  opacity: 0.6;
-  transition: filter 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 1s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 0.4s ease,
+              box-shadow 0.5s ease;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
 }
 
-.carousel-item.active .carousel-card {
-  filter: blur(0);
-  opacity: 1;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 80px rgba(255, 255, 255, 0.06);
-}
-
-.carousel-card video,
-.carousel-card img {
+.collection-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  border-radius: 20px;
 }
 
-.carousel-label {
-  margin-top: 1.5rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 400;
+.collection-item:hover .collection-card {
+  transform: scale(0.95);
+}
+
+.collection-label {
+  margin-top: 1.25rem;
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  font-weight: 500;
   color: #2a2a2a;
   letter-spacing: 0.04em;
   max-width: none;
-  transition: opacity 0.4s ease, color 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 1s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s ease;
 }
 
-.collection-section.dark .carousel-label {
+.collection-item:hover .collection-label {
+  transform: scale(0.97);
+}
+
+.collection-item.coming-soon .collection-card {
+  filter: blur(7px) saturate(0.75);
+}
+
+.collection-item.coming-soon .collection-label {
+  color: #777;
+}
+
+.collection-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-primary);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f3f3f3;
+  background: rgba(20, 20, 20, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+}
+
+.collection-section.dark .collection-label {
   color: #e0e0e0;
 }
 
-.carousel-desc {
-  margin-top: 1rem;
-  font-size: 0.82rem;
-  color: #999;
-  letter-spacing: 0.02em;
-  max-width: none;
-  transition: opacity 0.5s ease, transform 0.5s ease, color 1s cubic-bezier(0.4, 0, 0.2, 1);
-  min-height: 1.5em;
-}
-
-.collection-section.dark .carousel-desc {
-  color: #666;
+.collection-section.dark .collection-item.coming-soon .collection-label {
+  color: #888;
 }
 
 /* ========== PHILOSOPHY SECTION ========== */
@@ -570,7 +568,7 @@ p {
 }
 
 .detail-caption {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-secondary);
   font-size: 1.05rem;
   font-weight: 400;
   letter-spacing: 0.06em;
@@ -595,7 +593,7 @@ p {
 }
 
 blockquote {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-secondary);
   font-style: italic;
   font-weight: 400;
   font-size: clamp(1.4rem, 2.8vw, 2rem);
@@ -605,7 +603,7 @@ blockquote {
 }
 
 cite {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary);
   font-style: normal;
   font-size: 0.78rem;
   letter-spacing: 0.12em;
@@ -617,9 +615,9 @@ cite {
 .btn-learn {
   display: inline-block;
   margin-top: 2rem;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary);
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #2a2a2a;
@@ -636,7 +634,39 @@ cite {
 
 /* ========== PROGRAMS SECTION ========== */
 .programs-section {
-  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #111;
+}
+
+.programs-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.programs-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
+}
+
+.programs-content {
+  position: relative;
+}
+
+.programs-section .section-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.programs-section h2,
+.programs-section .program-title {
+  color: #f5f5f5;
 }
 
 .programs-list {
@@ -648,12 +678,12 @@ cite {
   justify-content: space-between;
   align-items: baseline;
   padding: 2rem 1rem;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
   cursor: default;
 }
 
 .program-row:last-child {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 .program-row .program-title,
@@ -667,19 +697,19 @@ cite {
 }
 
 .program-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: 500;
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  color: #2a2a2a;
+  color: #f5f5f5;
   letter-spacing: -0.01em;
 }
 
 .program-desc {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 300;
+  font-family: var(--font-secondary);
+  font-style: normal;
+  font-weight: 400;
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  color: #888;
+  color: rgba(255, 255, 255, 0.78);
   max-width: none;
 }
 
@@ -705,8 +735,8 @@ cite {
 }
 
 .footer-col h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: 500;
   font-size: 1.05rem;
   color: #ccc;
   letter-spacing: 0.06em;
@@ -730,6 +760,7 @@ cite {
 }
 
 .footer-col ul li a {
+  font-family: var(--font-primary);
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   color: #777;
@@ -753,14 +784,15 @@ cite {
 }
 
 .footer-bottom-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-weight: 500;
   font-size: 1.3rem;
   letter-spacing: 0.2em;
   color: #555;
 }
 
 .footer-bottom-name {
+  font-family: var(--font-primary);
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   color: #444;
@@ -769,6 +801,7 @@ cite {
 }
 
 .footer-copy p {
+  font-family: var(--font-secondary);
   font-size: 0.68rem;
   color: #3a3a3a;
   max-width: none;
@@ -829,21 +862,9 @@ cite {
     margin-right: 0;
   }
 
-  .carousel {
-    height: 420px;
-  }
-
-  .carousel-card {
-    width: 240px;
-    height: 320px;
-  }
-
-  .carousel-item.pos-left {
-    left: 2%;
-  }
-
-  .carousel-item.pos-right {
-    left: 98%;
+  .collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
   }
 
   .section {
@@ -889,20 +910,8 @@ cite {
     font-size: 1.6rem;
   }
 
-  .carousel {
-    height: 340px;
-  }
-
-  .carousel-card {
-    width: 180px;
-    height: 240px;
-  }
-
-  .carousel-item.pos-left {
-    left: 0%;
-  }
-
-  .carousel-item.pos-right {
-    left: 100%;
+  .collection-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }

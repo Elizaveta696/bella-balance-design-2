@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -36,6 +36,55 @@
     </div>
   </section>
 
+  <!-- Collection Section -->
+  <section class="section collection-section" id="collection">
+    <div class="section-inner">
+      <span class="section-label reveal">The Collection</span>
+      <h2 class="reveal reveal-delay-1">Where form meets calm.</h2>
+      <div class="collection-grid">
+        <article class="collection-item reveal">
+          <div class="collection-card">
+            <img src="photos/image1.png" alt="Stillness vase" loading="lazy">
+          </div>
+          <p class="collection-label">Stillness</p>
+        </article>
+        <article class="collection-item reveal reveal-delay-1">
+          <div class="collection-card">
+            <img src="photos/image2.png" alt="Form vase" loading="lazy">
+          </div>
+          <p class="collection-label">Form</p>
+        </article>
+        <article class="collection-item reveal reveal-delay-2">
+          <div class="collection-card">
+            <img src="photos/image3.png" alt="Balance vase" loading="lazy">
+          </div>
+          <p class="collection-label">Balance</p>
+        </article>
+        <article class="collection-item coming-soon reveal">
+          <div class="collection-card">
+            <img src="photos/image4.png" alt="Sculptural vase coming soon" loading="lazy">
+            <span class="collection-badge">Coming soon</span>
+          </div>
+          <p class="collection-label">Sculpt</p>
+        </article>
+        <article class="collection-item coming-soon reveal reveal-delay-1">
+          <div class="collection-card">
+            <img src="photos/image5.png" alt="Contour vase coming soon" loading="lazy">
+            <span class="collection-badge">Coming soon</span>
+          </div>
+          <p class="collection-label">Contour</p>
+        </article>
+        <article class="collection-item coming-soon reveal reveal-delay-2">
+          <div class="collection-card">
+            <img src="photos/image6.png" alt="Solace vase coming soon" loading="lazy">
+            <span class="collection-badge">Coming soon</span>
+          </div>
+          <p class="collection-label">Solace</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- Gradient Transition -->
   <div class="gradient-transition"></div>
 
@@ -53,35 +102,6 @@
           <a href="story.html" class="btn-learn reveal reveal-delay-3">Learn more</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Collection Section -->
-  <section class="section collection-section" id="collection">
-    <div class="section-inner">
-      <span class="section-label reveal">The Collection</span>
-      <h2 class="reveal reveal-delay-1">Where form meets calm.</h2>
-      <div class="carousel" id="carousel">
-        <div class="carousel-item pos-left" data-index="0" data-label="Stillness" data-desc="Embrace the quiet moments">
-          <div class="carousel-card">
-            <img src="photos/image1.png" alt="Stillness" >
-          </div>
-          <p class="carousel-label">Stillness</p>
-        </div>
-        <div class="carousel-item pos-center active" data-index="1" data-label="Form" data-desc="Where shape finds meaning">
-          <div class="carousel-card">
-            <img src="photos/image2.png" alt="Form">
-          </div>
-          <p class="carousel-label">Form</p>
-        </div>
-        <div class="carousel-item pos-right" data-index="2" data-label="Balance" data-desc="Harmony in every curve">
-          <div class="carousel-card">
-            <img src="photos/image3.png" alt="Balance">
-          </div>
-          <p class="carousel-label">Balance</p>
-        </div>
-      </div>
-      <p class="carousel-desc" id="carouselDesc">Where shape finds meaning</p>
     </div>
   </section>
 
@@ -114,7 +134,11 @@
 
   <!-- Programs Section -->
   <section class="section programs-section">
-    <div class="section-inner">
+    <video autoplay muted loop playsinline class="programs-video" aria-hidden="true">
+      <source src="videos/videoplayback.mp4" type="video/mp4">
+    </video>
+    <div class="programs-overlay"></div>
+    <div class="section-inner programs-content">
       <span class="section-label reveal">Programs</span>
       <h2 class="reveal reveal-delay-1">Four ways we shape objects<br>that shape your space.</h2>
       <div class="programs-list">

@@ -4,16 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollHint = document.getElementById('scrollHint');
 
   // Show navbar after hero is half scrolled
-  const heroHeight = () => hero.offsetHeight;
+  const heroHeight = () => (hero ? hero.offsetHeight : window.innerHeight);
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const threshold = heroHeight() * 0.5;
 
-    if (scrollY > threshold) {
-      navbar.classList.add('visible');
-    } else {
-      navbar.classList.remove('visible');
+    if (navbar && hero) {
+      if (scrollY > threshold) {
+        navbar.classList.add('visible');
+      } else {
+        navbar.classList.remove('visible');
+      }
     }
 
     // Fade out scroll hint
@@ -90,70 +92,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Carousel logic
-  const carousel = document.getElementById('carousel');
-  const carouselDesc = document.getElementById('carouselDesc');
-  if (carousel) {
-    const items = Array.from(carousel.querySelectorAll('.carousel-item'));
-    const positions = ['pos-left', 'pos-center', 'pos-right'];
-    let isAnimating = false;
-
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        if (item.classList.contains('active') || isAnimating) return;
-        isAnimating = true;
-
-        // Find current position of clicked item
-        const clickedPos = positions.find(p => item.classList.contains(p));
-
-        // Determine rotation direction
-        // If clicked left → rotate right (left→center, center→right, right→left)
-        // If clicked right → rotate left (right→center, center→left, left→right)
-        let rotateMap;
-        if (clickedPos === 'pos-left') {
-          rotateMap = {
-            'pos-left': 'pos-center',
-            'pos-center': 'pos-right',
-            'pos-right': 'pos-left'
-          };
-        } else {
-          rotateMap = {
-            'pos-right': 'pos-center',
-            'pos-center': 'pos-left',
-            'pos-left': 'pos-right'
-          };
-        }
-
-        // Apply new positions to all items
-        items.forEach(el => {
-          const currentPos = positions.find(p => el.classList.contains(p));
-          const newPos = rotateMap[currentPos];
-          el.classList.remove(...positions);
-          el.classList.add(newPos);
-
-          // Update active state
-          if (newPos === 'pos-center') {
-            el.classList.add('active');
-          } else {
-            el.classList.remove('active');
-          }
-        });
-
-        // Update description
-        if (carouselDesc) {
-          carouselDesc.style.opacity = '0';
-          carouselDesc.style.transform = 'translateY(6px)';
-          setTimeout(() => {
-            carouselDesc.textContent = item.dataset.desc || '';
-            carouselDesc.style.opacity = '1';
-            carouselDesc.style.transform = 'translateY(0)';
-          }, 450);
-        }
-
-        setTimeout(() => {
-          isAnimating = false;
-        }, 950);
-      });
-    });
-  }
 });
