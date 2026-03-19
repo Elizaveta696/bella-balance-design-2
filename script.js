@@ -1,29 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
   const hero = document.getElementById('hero');
-  const scrollHint = document.getElementById('scrollHint');
+  const heroVideo = document.getElementById('heroVideo');
 
-  // Show navbar after hero is half scrolled
-  const heroHeight = () => (hero ? hero.offsetHeight : window.innerHeight);
+  // Keep navbar visible from the first frame.
+  if (navbar) {
+    navbar.classList.add('visible');
+  }
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const threshold = heroHeight() * 0.5;
-
-    if (navbar && hero) {
-      if (scrollY > threshold) {
-        navbar.classList.add('visible');
-      } else {
-        navbar.classList.remove('visible');
-      }
-    }
-
-    // Fade out scroll hint
-    if (scrollHint) {
-      const hintOpacity = Math.max(0, 1 - scrollY / (heroHeight() * 0.3));
-      scrollHint.style.opacity = hintOpacity;
-    }
-  }, { passive: true });
+  // Slow hero video playback for a calmer visual pace.
+  if (heroVideo) {
+    heroVideo.playbackRate = 0.5;
+  }
 
   // Intersection Observer for scroll-reveal animations
   const revealElements = document.querySelectorAll(

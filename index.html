@@ -12,7 +12,7 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar visible" id="navbar">
     <div class="nav-logo">BB</div>
     <div class="nav-links">
       <a href="#story">Story</a>
@@ -24,15 +24,13 @@
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-      <source src="photos/20260310_2108_New Video_simple_compose_01kkcjcwtrexatnp4m07c4ezyb.mp4" type="video/mp4">
+    <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+      <source src="videos/5778-185369732.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-tagline">Balance Today. Breathe Tomorrow.</p>
-    </div>
-    <div class="scroll-hint" id="scrollHint">
-      <div class="scroll-line"></div>
+      <a href="#collection" class="hero-cta">See products</a>
     </div>
   </section>
 
@@ -85,9 +83,6 @@
     </div>
   </section>
 
-  <!-- Gradient Transition -->
-  <div class="gradient-transition"></div>
-
   <!-- Story Section -->
   <section class="section story-section" id="story">
     <div class="section-inner">
@@ -105,31 +100,43 @@
     </div>
   </section>
 
-  <!-- Philosophy Section -->
-  <section class="section philosophy-section" id="philosophy">
+  <!-- Creators Section -->
+  <section class="section creators-section" id="philosophy">
+    <video autoplay muted loop playsinline class="creators-video" aria-hidden="true">
+      <source src="videos/background-video.mp4" type="video/mp4">
+    </video>
     <div class="section-inner">
-      <div class="philosophy-grid">
-        <div class="creators-visual">
-          <div class="philosophy-image">
-            <img src="photos/20260310_2131_Image Generation_simple_compose_01kkckq28sek98zscj6ra469p7.png" alt="BellaBalance vases" loading="lazy">
-          </div>
-        </div>
-        <div class="creators-visual">
-          <div class="creator-accent">
-            <img src="photos/image6.png" alt="Abstract detail" loading="lazy">
-          </div>
-          <div class="philosophy-text">
-            <span class="section-label reveal">The Creators</span>
-            <h2 class="reveal reveal-delay-1">Less noise.<br>More presence.</h2>
-            <p class="reveal reveal-delay-2">We don’t chase trends. We pursue timelessness. Every curve, every surface, every shadow cast by a BellaBalance piece is considered — not decorated. Our design language speaks softly, because quiet confidence needs no amplification.</p>
-          <a href="creators.html" class="btn-learn reveal reveal-delay-3">Learn more</a>
-          </div>
-          <div class="creator-photo">
-            <img src="photos/image5.png" alt="The creator" loading="lazy">
-          </div>
-        </div>
+      <div class="creators-head">
+        <h2 class="reveal">The Creators</h2>
+        <p class="reveal reveal-delay-1">We don't chase trends. We pursue timelessness. Every curve and shadow in a BellaBalance piece is considered, calm, and intentional.</p>
       </div>
+      <div class="creators-gallery">
+        <figure class="creators-card creators-card-wide reveal">
+          <img src="photos/20260310_2131_Image Generation_simple_compose_01kkckq28sek98zscj6ra469p7.png" alt="BellaBalance creator mood" loading="lazy">
+        </figure>
+        <figure class="creators-card reveal reveal-delay-1">
+          <img src="photos/image6.png" alt="BellaBalance studio detail" loading="lazy">
+        </figure>
+        <figure class="creators-card reveal reveal-delay-2">
+          <img src="photos/image5.png" alt="BellaBalance creator portrait" loading="lazy">
+        </figure>
+      </div>
+      <a href="creators.html" class="btn-learn creators-link reveal reveal-delay-3">Learn more</a>
     </div>
+  </section>
+
+  <!-- Detail Section -->
+  <section class="section detail-section" id="detail">
+    <div class="section-inner detail-inner">
+      <span class="section-label detail-label reveal">The Detail</span>
+      <div class="detail-image reveal reveal-delay-1">
+        <img src="photos/ChatGPT%20Image%2012.3.2026%20klo%2010.24.20.png" alt="BellaBalance vases" loading="lazy">
+      </div>
+      <p class="detail-caption reveal reveal-delay-2">BellaBalance, Handcrafted Vases</p>
+      <div class="detail-quote reveal reveal-delay-3">
+        <blockquote>"The details are not the details. They make the design."</blockquote>
+        <cite>— Charles Eames</cite>
+      </div>      <a href="detail.html" class="btn-learn reveal reveal-delay-3">Learn more</a>    </div>
   </section>
 
   <!-- Programs Section -->
@@ -160,20 +167,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Detail Section -->
-  <section class="section detail-section" id="detail">
-    <div class="section-inner detail-inner">
-      <span class="section-label detail-label reveal">The Detail</span>
-      <div class="detail-image reveal reveal-delay-1">
-        <img src="photos/ChatGPT%20Image%2012.3.2026%20klo%2010.24.20.png" alt="BellaBalance vases" loading="lazy">
-      </div>
-      <p class="detail-caption reveal reveal-delay-2">BellaBalance, Handcrafted Vases</p>
-      <div class="detail-quote reveal reveal-delay-3">
-        <blockquote>"The details are not the details. They make the design."</blockquote>
-        <cite>— Charles Eames</cite>
-      </div>      <a href="detail.html" class="btn-learn reveal reveal-delay-3">Learn more</a>    </div>
   </section>
 
   <!-- Contact / Footer -->
