@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400;1,500&family=Intel+One+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -31,7 +31,7 @@
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <img src="photos/image.png" alt="BellaBalance hero" class="hero-video">
+    <img src="photos/hero-image.png" alt="BellaBalance hero" class="hero-video">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-tagline">Balance today, Leave tomorrow</p>
@@ -41,65 +41,72 @@
 
   <!-- Collection Section -->
   <section class="section collection-section" id="collection">
+    <video autoplay muted loop playsinline class="collection-video" aria-hidden="true">
+      <source src="videos/background-video2.mp4" type="video/mp4">
+    </video>
+    <div class="collection-overlay"></div>
     <div class="section-inner">
-      <span class="section-label reveal">The Collection</span>
+      <span class="section-label reveal">Collection</span>
       <h2 class="reveal reveal-delay-1">Where form meets calm.</h2>
-      <div class="collection-grid">
-        <article class="collection-item reveal">
+      <div class="collection-carousel reveal reveal-delay-2">
+        <div class="collection-track">
+          <article class="collection-item">
+            <div class="collection-card">
+              <img src="photos/image1.png" alt="Stillness vase" loading="lazy">
+            </div>
+            <p class="collection-label">Stillness</p>
+          </article>
+          <article class="collection-item">
+            <div class="collection-card">
+              <img src="photos/image2.png" alt="Form vase" loading="lazy">
+            </div>
+            <p class="collection-label">Form</p>
+          </article>
+          <article class="collection-item">
+            <div class="collection-card">
+              <img src="photos/image3.png" alt="Balance vase" loading="lazy">
+            </div>
+            <p class="collection-label">Balance</p>
+          </article>
+          <article class="collection-item" aria-hidden="true">
           <div class="collection-card">
             <img src="photos/image1.png" alt="Stillness vase" loading="lazy">
           </div>
           <p class="collection-label">Stillness</p>
         </article>
-        <article class="collection-item reveal reveal-delay-1">
+          <article class="collection-item" aria-hidden="true">
           <div class="collection-card">
             <img src="photos/image2.png" alt="Form vase" loading="lazy">
           </div>
           <p class="collection-label">Form</p>
         </article>
-        <article class="collection-item reveal reveal-delay-2">
+          <article class="collection-item" aria-hidden="true">
           <div class="collection-card">
             <img src="photos/image3.png" alt="Balance vase" loading="lazy">
           </div>
           <p class="collection-label">Balance</p>
         </article>
-        <article class="collection-item coming-soon reveal">
-          <div class="collection-card">
-            <img src="photos/image4.png" alt="Sculptural vase coming soon" loading="lazy">
-            <span class="collection-badge">Coming soon</span>
-          </div>
-          <p class="collection-label">Coming soon</p>
-        </article>
-        <article class="collection-item coming-soon reveal reveal-delay-1">
-          <div class="collection-card">
-            <img src="photos/image7.png" alt="Contour vase coming soon" loading="lazy">
-            <span class="collection-badge">Coming soon</span>
-          </div>
-          <p class="collection-label">Coming soon</p>
-        </article>
-        <article class="collection-item coming-soon reveal reveal-delay-2">
-          <div class="collection-card">
-            <img src="photos/image8.png" alt="Solace vase coming soon" loading="lazy">
-            <span class="collection-badge">Coming soon</span>
-          </div>
-          <p class="collection-label">Coming soon</p>
-        </article>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Story Section -->
   <section class="section story-section" id="story">
-    <div class="section-inner">
-      <div class="story-grid">
-        <div class="story-image">
-          <img src="photos/ChatGPT%20Image%2012.3.2026%20klo%2015.25.23.png" alt="Elegant vase display" loading="lazy">
-        </div>
-        <div class="story-text">
-          <span class="section-label reveal">Our Story</span>
-          <h2 class="reveal reveal-delay-1">Crafted with intention,<br>designed for stillness.</h2>
-          <p class="reveal reveal-delay-2">BellaBalance was born from a simple observation — in a world that moves too fast, the objects we surround ourselves with should invite us to slow down. Each piece is a quiet statement, shaped by the belief that beauty lives in restraint.</p>
-          <a href="story.html" class="btn-learn reveal reveal-delay-3">Learn more</a>
+    <div class="story-shell">
+      <div class="section-inner">
+        <div class="story-grid">
+          <figure class="story-image reveal">
+            <img src="out-story-photos/image-early-stage.png" alt="Early stage design sketches" loading="lazy">
+          </figure>
+          <figure class="story-image reveal reveal-delay-1">
+            <img src="out-story-photos/image-first%20steps.png" alt="First steps in the making process" loading="lazy">
+          </figure>
+          <div class="story-text reveal reveal-delay-2">
+            <span class="section-label">Our Story</span>
+            <p>From rough first forms to our first balanced silhouette, every piece starts with calm experimentation and patient hands.</p>
+            <a href="story.html" class="btn-learn story-btn">Learn more</a>
+          </div>
         </div>
       </div>
     </div>
